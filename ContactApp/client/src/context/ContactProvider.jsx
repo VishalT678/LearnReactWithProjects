@@ -1,5 +1,5 @@
 import ContactContext from "./ContactContext";
-import { getContacts , createContact, updateContact , deleteContact, deleteContact } from "../services/contactAPI";
+import { getContacts , createContact, updateContact , deleteContact } from "../services/contactAPI";
 import { useEffect, useState } from "react";
 
 const ContactProvider = ({children}) => {
