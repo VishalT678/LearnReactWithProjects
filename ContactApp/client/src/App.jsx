@@ -8,6 +8,7 @@ import ContactForm from './components/ContactForm'
 
 function App() {
   const [showForm , setShowForm ] = useState(false)
+  const [editing , setEditing] = useState(null);
 
   return (
     <ContactProvider>
@@ -24,8 +25,12 @@ function App() {
               Add New Contact
             </button>
           </div>
-          {showForm && <ContactForm onClose={()=> setShowForm(false)} />}
-          <ContactList />
+          {showForm && 
+          (<ContactForm onClose={()=> setShowForm(false)} 
+            initialValues={editing || undefined}
+            />
+            )}
+          <ContactList onEdit={(c)=>{setEditing(c); setShowForm(true);}} />
           
         </div>
       </div>
